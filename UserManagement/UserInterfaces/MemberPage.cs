@@ -17,6 +17,7 @@ namespace UserManagement.UserInterfaces
         private static List<string> options = new List<string>()
         {
             "Change password",
+            "Get Profile Info",
             "Logout"
         };
         public static void Start()
@@ -44,6 +45,22 @@ namespace UserManagement.UserInterfaces
                             Console.WriteLine();
 
                             memberService.UpdatePassword(username, password);
+                        }
+                        catch (Exception ex)
+                        {
+                            continue;
+                        }
+                        break;
+
+                    case 2:
+                        try
+                        {
+                            Console.WriteLine("Enter member username (except admin):");
+                            var username = Console.ReadLine();
+                            var user = memberService.getUserByUsername(username);
+                            Console.WriteLine("Info Profile:");
+                            Console.WriteLine(user.ToString());
+
                         }
                         catch (Exception ex)
                         {

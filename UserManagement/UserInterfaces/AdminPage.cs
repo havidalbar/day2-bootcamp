@@ -22,6 +22,7 @@ namespace UserManagement.UserInterfaces
             "Add member account",
             "Disable member account",
             "Change password",
+            "Get Profile Info",
             "Logout"
         };
 
@@ -85,6 +86,22 @@ namespace UserManagement.UserInterfaces
                             Console.WriteLine();
 
                             memberService.UpdatePassword(username, password);
+                        }
+                        catch (Exception ex)
+                        {
+                            continue;
+                        }
+                        break;
+
+                    case 4:
+                        try
+                        {
+                            Console.WriteLine("Enter member username (except admin):");
+                            var username = Console.ReadLine();
+                            var user = memberService.getUserByUsername(username);
+                            Console.WriteLine("Info Profile:");
+                            Console.WriteLine(user.ToString());
+
                         }
                         catch (Exception ex)
                         {
