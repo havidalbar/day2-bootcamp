@@ -1,4 +1,4 @@
-# Day 21 - Bootcamp SQL & .Net OOP
+# Day 2 - Bootcamp SQL & .Net OOP
 
 # SQL
 ## Table Spesification
