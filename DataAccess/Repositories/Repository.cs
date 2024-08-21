@@ -30,5 +30,10 @@ namespace DataAccess.Repositories
             else
                 _items[index] = itemToSave;
         }
+
+        public List<T>? GetAll()
+        {
+            return _items;
+        }
     }
 }

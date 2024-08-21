@@ -15,7 +15,7 @@ namespace Services.Services
 
         static MemberService() { }
 
-        public BaseEntity? getUserByUsername(string username)
+        public BaseEntity? GetUserByUsername(string username)
         {
             var userExist = userRepository.GetByUsername(username);
 
@@ -58,6 +58,21 @@ namespace Services.Services
 
             var user = (Member) userToUpdate;
             userRepository.UpdatePassword(user, password);
+        }
+
+        public List<BaseEntity>? GetListUser()
+        {
+            return userRepository.GetAll();
+        }
+
+        public void DeleteMemberByUsername(string username)
+        {
+            var userToUpdate = userRepository.GetByUsername(username);
+
+            if (userToUpdate is null || userToUpdate is not Member)
+                return;
+
+            userRepository.Delete(userToUpdate);
         }
     }
 }

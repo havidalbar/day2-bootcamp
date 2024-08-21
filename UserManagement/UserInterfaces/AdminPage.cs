@@ -23,6 +23,8 @@ namespace UserManagement.UserInterfaces
             "Disable member account",
             "Change password",
             "Get Profile Info",
+            "Get List Profile Member",
+            "Delete Member",
             "Logout"
         };
 
@@ -98,9 +100,38 @@ namespace UserManagement.UserInterfaces
                         {
                             Console.WriteLine("Enter member username (except admin):");
                             var username = Console.ReadLine();
-                            var user = memberService.getUserByUsername(username);
+                            var user = memberService.GetUserByUsername(username);
                             Console.WriteLine("Info Profile:");
                             Console.WriteLine(user.ToString());
+
+                        }
+                        catch (Exception ex)
+                        {
+                            continue;
+                        }
+                        break;
+
+                    case 5:
+                        try
+                        {
+                            Console.WriteLine("List Info Profile:");
+                            Console.WriteLine(String.Concat(memberService.GetListUser().Select(o => o.ToString() + "\n")));
+
+                        }
+                        catch (Exception ex)
+                        {
+                            continue;
+                        }
+                        break;
+
+                    case 6:
+                        try
+                        {
+                            Console.WriteLine("Enter member username:");
+                            var username = Console.ReadLine();
+                            memberService.DeleteMemberByUsername(username);
+                            Console.WriteLine("List Info Profile:");
+                            Console.WriteLine(String.Concat(memberService.GetListUser().Select(o => o.ToString() + "\n")));
 
                         }
                         catch (Exception ex)
