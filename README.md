@@ -110,3 +110,9 @@ FROM
 LEFT JOIN 
     TableOrder tor ON ts.TableId = tor.TableId;
 ```
+
+## Result Relation SQL
+![alt text](https://github.com/havidalbar/day21-bootcamp/blob/main/relation.png)
+
+## Result Result Join SQL
+![alt text](https://github.com/havidalbar/day21-bootcamp/blob/main/result_join.png)
