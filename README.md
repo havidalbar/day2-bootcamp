@@ -7,9 +7,10 @@ Untuk fitur dari role **Admin** yaitu:
 4. "Get Profile Info",
 5. "Get List Profile Member",
 6. "Delete Member",
-7. Logout
+7. "Logout"
 
 Sedangkan untuk role **Member** memiliki fitur yaitu:
 1. "Change password",
 2. "Get Profile Info",
 3. "Get List Profile Member",
+4. "Logout"
