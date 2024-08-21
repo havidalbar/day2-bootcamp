@@ -112,7 +112,7 @@ LEFT JOIN
 ```
 
 ## Result Relation SQL
-![alt text](https://github.com/havidalbar/day21-bootcamp/blob/main/relation.png)
+![alt text](https://github.com/havidalbar/day2-bootcamp/blob/main/relation.png)
 
 ## Result Result Join SQL
-![alt text](https://github.com/havidalbar/day21-bootcamp/blob/main/result_join.png)
+![alt text](https://github.com/havidalbar/day2-bootcamp/blob/main/result_join.png)
