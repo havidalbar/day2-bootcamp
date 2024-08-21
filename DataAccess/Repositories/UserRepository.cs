@@ -17,5 +17,10 @@ namespace DataAccess.Repositories
         {
             return _items.FirstOrDefault(item => item.Username == username);
         }
+
+        public void UpdatePassword(BaseEntity entity, string password)
+        {
+            entity.Password = password;
+        }
     }
 }

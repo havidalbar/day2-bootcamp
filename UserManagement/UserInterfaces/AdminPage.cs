@@ -21,6 +21,7 @@ namespace UserManagement.UserInterfaces
         {
             "Add member account",
             "Disable member account",
+            "Change password",
             "Logout"
         };
 
@@ -37,41 +38,60 @@ namespace UserManagement.UserInterfaces
                     continue;
                 }
 
-                if (choice == 1)
+                switch (choice)
                 {
-                    try
-                    {
-                        Console.WriteLine("Enter member username:");
-                        var username = Console.ReadLine();
-                        Console.WriteLine();
-                        Console.WriteLine("Enter member password:");
-                        var password = Console.ReadLine();
+                    case 1:
+                        try
+                        {
+                            Console.WriteLine("Enter member username:");
+                            var username = Console.ReadLine();
+                            Console.WriteLine();
+                            Console.WriteLine("Enter member password:");
+                            var password = Console.ReadLine();
 
-                        if(string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                                continue;
+
+                            memberService.AddNewMember(username, password);
+                        }
+                        catch (Exception ex)
+                        {
                             continue;
+                        }
+                        break;
 
-                        memberService.AddNewMember(username, password);
-                    }
-                    catch(Exception ex)
-                    {
-                        continue;
-                    }
-                }
+                    case 2:
+                        try
+                        {
+                            Console.WriteLine("Enter member username:");
+                            var username = Console.ReadLine();
+                            Console.WriteLine();
 
-                if (choice == 2)
-                {
-                    try
-                    {
-                        Console.WriteLine("Enter member username:");
-                        var username = Console.ReadLine();
-                        Console.WriteLine();
-                        
-                        memberService.DisableMember(username);
-                    }
-                    catch (Exception ex)
-                    {
-                        continue;
-                    }
+                            memberService.DisableMember(username);
+                        }
+                        catch (Exception ex)
+                        {
+                            continue;
+                        }
+                        break;
+
+                    case 3:
+                        try
+                        {
+                            Console.WriteLine("Enter member username:");
+                            var username = Console.ReadLine();
+                            Console.WriteLine("Enter new password:");
+                            var password = Console.ReadLine();
+                            Console.WriteLine();
+
+                            memberService.UpdatePassword(username, password);
+                        }
+                        catch (Exception ex)
+                        {
+                            continue;
+                        }
+                        break;
+
                 }
             }
         }
